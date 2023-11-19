@@ -7,12 +7,10 @@ import TextForm from './Components/TextForm';
 
 function App() {
   return (
-    <>
-    <div className='container my-3'>
+  <>
       <TextForm title ="Write your text here..."/>
       
-      </div>
-    </>
+      </>
   );
 }
 
