@@ -66,41 +66,38 @@ export default function TextForm(props) {
             setTextHistory([...textHistory]);
           }
     }
-    const [myStyle, setMystyle] = useState({
-      color: 'black',
-      backgroundColor: 'white',
-    });
-    const [btnText, setbtnText] = useState("Enable Dark Mode"
-    );
+    // const [myStyle, setMystyle] = useState({
+    //   color: 'black',
+    //   backgroundColor: 'white',
+    // });
+    // const [btnText, setbtnText] = useState( "Enable Dark Mode" );
     
-    const modeChange = () => {
-      if (myStyle.color === 'black') {
-        setMystyle({
-          color: 'white',
-          backgroundColor: 'black',
-        });
-        setbtnText("Disable Dark Mode");
-      } else {
-        setMystyle({
-          color: 'black',
-          backgroundColor: 'white',
-        });
-        setbtnText("Enable Dark Mode");
-      }
-    };
-    
-
-
+    // const modeChange = () => {
+    //   if (myStyle.color === 'black') {
+    //     setMystyle({
+    //       color: 'white',
+    //       backgroundColor: 'black',
+    //     });
+    //     setbtnText("Disable Dark Mode");
+    //   } else {
+    //     setMystyle({
+    //       color: 'black',
+    //       backgroundColor: 'white',
+    //     });
+    //     setbtnText("Enable Dark Mode");
+    //   }
+    // };
+  
   const [text, setText] = useState("Enter your text here");
   const [textHistory, setTextHistory] = useState([]);
   return (
-    <div style={myStyle}>
-    <div className="container ">
+    <div >
+    <div className="container my-3">
     
-      <h1> {props.title}</h1>
+      {/* <h2> {props.title}</h2> */}
       
       <div className="mb-3 my-3" >
-        <textarea className="form-control " style={myStyle} id="myBox" onChange={handleOnChange} value={text}  rows="12"></textarea>
+        <textarea className={`form-control bg-${props.txtArea} text-${props.txtClr}`}  id="myBox" onChange={handleOnChange} value={text}  rows="11"></textarea>
       </div>
       <div className="container my-3 ">
       <button className="btn btn-primary" onClick={handleOnClick} onMouseEnter={handleHover3}
@@ -126,7 +123,7 @@ export default function TextForm(props) {
       
       </div>
       <div className="container">
-    <button onClick={modeChange} type="button" className="btn btn-secondary my-3">{btnText}</button>
+    {/* <button  type="button" className="btn btn-primary my-3">{btnText}</button> */}
     </div>
     </div>
     
