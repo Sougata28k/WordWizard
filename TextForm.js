@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-
-export default function TextForm(props) {
+import React, { useState } from "react"
+const TextForm=(props)=> {
     
         const handleHover = () => {
           console.log('Click to capitalize the first word of each sentence!'); // You can replace this with your own logic
@@ -90,6 +89,20 @@ export default function TextForm(props) {
   
   const [text, setText] = useState("Enter your text here");
   const [textHistory, setTextHistory] = useState([]);
+  
+    // Define a styles object
+    // const styles = {
+    //   footer: {
+    //     position: 'fixed',
+    //     bottom: 0,
+    //     left: 0,
+    //     width: '100%',
+    //     backgroundColor: '#f8f8f8',
+    //     textAlign: 'center',
+    //     padding: '10px',
+    //   },
+    // };
+  
   return (
     <div >
     <div className="container my-3">
@@ -119,15 +132,20 @@ export default function TextForm(props) {
       <h3 className="my-3">Text Summary</h3>
        <p> {text.split(" ").length} words and {text.length} characters </p>
        {/* </div> */}
-      
+       
       
       </div>
-      <div className="container">
-    {/* <button  type="button" className="btn btn-primary my-3">{btnText}</button> */}
-    </div>
+      <footer className="footer fixed-bottom">
+  <div className="container text-center">
+    <p>&copy; {new Date().getFullYear()} WordWizard. All Rights Reserved.</p>
+  </div>
+</footer>
+
     </div>
     
     </div>
     
   );
-}
+  }
+
+  export default TextForm
